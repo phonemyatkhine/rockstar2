@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from './Todo';
 import Done from './Done';
 import Add from './Add';
-
+import Header from './Header';
 class App extends React.Component {
 
   autoid = 4;
@@ -66,7 +66,7 @@ class App extends React.Component {
           return task.status === 0;
         }).length} status="Todo" />
         <Todo
-          tasks= {this.state.tasks.filter(task => {
+            tasks= {this.state.tasks.filter(task => {
             return task.status === 0;
           })}
           remove={this.remove}
@@ -94,12 +94,5 @@ class App extends React.Component {
 }
 
 
-class Header extends React.Component {
-  render() {
-    return (
-      <h1>{this.props.status} List ({this.props.count})</h1>
-    );
-  }
-}
 
 export default App;
